@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Now It's Your Turn</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1.5rem;
+        }
+
+        .container {
+            max-width: 64rem;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .main-heading {
+            color: #000000;
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            line-height: 1.1;
+            margin-bottom: 3rem;
+        }
+
+        .illustration-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .nature-illustration {
+            max-width: 100%;
+            height: auto;
+            width: 24rem;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .main-heading {
+                font-size: 5rem;
+                margin-bottom: 4rem;
+            }
+            
+            .nature-illustration {
+                width: 31.25rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .main-heading {
+                font-size: 6rem;
+            }
+            
+            .nature-illustration {
+                width: 37.5rem;
+            }
+        }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .fade-in-delay {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hover effect for illustration */
+        .nature-illustration {
+            transition: transform 0.3s ease;
+        }
+
+        .nature-illustration:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Main heading -->
+        <h1 class="main-heading fade-in">
+            NOW IT'S<br>
+            YOUR TURN
+        </h1>
+
+        <!-- Botanical illustration -->
+        <div class="illustration-container fade-in-delay">
+            <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nature-Fw7Z0sjSsxG24QZfJ7cyfbSvcTujaT.png"
+                alt="Botanical line drawing with flowing organic forms and floral elements"
+                class="nature-illustration"
+                id="natureIllustration"
+            />
+        </div>
+    </div>
+
+    <script>
+        // Add interactive functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const illustration = document.getElementById('natureIllustration');
+            
+            // Add click interaction
+            illustration.addEventListener('click', function() {
+                // Create a subtle pulse effect
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+
+            // Add loading animation
+            illustration.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+
+            // Parallax effect on scroll (subtle)
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const parallax = scrolled * 0.1;
+                illustration.style.transform = `translateY(${parallax}px)`;
+            });
+
+            // Add keyboard accessibility
+            illustration.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+
+            // Make illustration focusable for accessibility
+            illustration.setAttribute('tabindex', '0');
+            illustration.setAttribute('role', 'button');
+            illustration.setAttribute('aria-label', 'Interactive botanical illustration');
+        });
+
+        // Optional: Add resize handler for responsive adjustments
+        window.addEventListener('resize', function() {
+            // Reset any transforms on resize
+            const illustration = document.getElementById('natureIllustration');
+            illustration.style.transform = 'scale(1)';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Pollution Problems</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-text {
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: 400;
+            text-align: center;
+            line-height: 1.3;
+            max-width: 600px;
+            position: absolute;
+            left: 50%;
+            top: 45%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        /* Иллюстрация человека */
+        .person {
+            position: absolute;
+            right: 20%;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 5;
+        }
+
+        .person-svg {
+            width: 300px;
+            height: 400px;
+            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.1));
+        }
+
+        /* Облака загрязнения */
+        .pollution-cloud {
+            position: absolute;
+            fill: #ffffff;
+            opacity: 0.8;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .cloud-1 {
+            top: 15%;
+            left: 15%;
+            width: 80px;
+            height: 60px;
+            animation-delay: 0s;
+        }
+
+        .cloud-2 {
+            top: 25%;
+            left: 35%;
+            width: 70px;
+            height: 50px;
+            animation-delay: 1s;
+        }
+
+        .cloud-3 {
+            top: 10%;
+            right: 15%;
+            width: 60px;
+            height: 45px;
+            animation-delay: 2s;
+        }
+
+        .cloud-4 {
+            bottom: 30%;
+            left: 10%;
+            width: 90px;
+            height: 70px;
+            animation-delay: 0.5s;
+        }
+
+        .cloud-5 {
+            bottom: 40%;
+            left: 25%;
+            width: 50px;
+            height: 40px;
+            animation-delay: 1.5s;
+        }
+
+        .cloud-6 {
+            bottom: 20%;
+            right: 25%;
+            width: 75px;
+            height: 55px;
+            animation-delay: 2.5s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.6;
+            }
+            25% {
+                transform: translateY(-15px) rotate(2deg);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-10px) rotate(-1deg);
+                opacity: 1;
+            }
+            75% {
+                transform: translateY(-20px) rotate(1deg);
+                opacity: 0.7;
+            }
+        }
+
+        /* Анимация появления */
+        .main-text {
+            opacity: 0;
+            animation: fadeInUp 2s ease 1s forwards;
+        }
+
+        .person {
+            opacity: 0;
+            transform: translateY(-50%) scale(0.8);
+            animation: scaleIn 1.5s ease 0.5s forwards;
+        }
+
+        .pollution-cloud {
+            opacity: 0;
+            animation: fadeInFloat 3s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            to {
+                opacity: 1;
+                transform: translateY(-50%) scale(1);
+            }
+        }
+
+        @keyframes fadeInFloat {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            50% {
+                opacity: 0.4;
+            }
+            100% {
+                opacity: 0.8;
+                transform: translateY(0px);
+            }
+        }
+
+        /* Адаптивность */
+        @media (max-width: 1024px) {
+            .main-text {
+                font-size: 2rem;
+                max-width: 500px;
+                left: 40%;
+            }
+
+            .person {
+                right: 10%;
+            }
+
+            .person-svg {
+                width: 250px;
+                height: 320px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-text {
+                font-size: 1.6rem;
+                max-width: 400px;
+                left: 50%;
+                top: 30%;
+            }
+
+            .person {
+                right: 50%;
+                top: 65%;
+                transform: translate(50%, -50%);
+            }
+
+            .person-svg {
+                width: 200px;
+                height: 260px;
+            }
+
+            .pollution-cloud {
+                transform: scale(0.8);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-text {
+                font-size: 1.3rem;
+                max-width: 320px;
+                top: 25%;
+            }
+
+            .person {
+                top: 70%;
+            }
+
+            .person-svg {
+                width: 160px;
+                height: 200px;
+            }
+
+            .pollution-cloud {
+                transform: scale(0.6);
+            }
+        }
+
+        /* Интерактивные эффекты */
+        .container:hover .pollution-cloud {
+            animation-duration: 2s;
+            opacity: 1;
+        }
+
+        .container:hover .person-svg {
+            filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.2));
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Основной текст -->
+        <p class="main-text">Imagine a world where the air stings your lungs,</p>
+
+        <!-- Иллюстрация человека -->
+        <div class="person">
+            <svg class="person-svg" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+                <!-- Тело человека -->
+                <g fill="#ffffff" stroke="#cccccc" stroke-width="2">
+                    <!-- Голова и шапка -->
+                    <ellipse cx="150" cy="80" rx="35" ry="40" fill="#f0f0f0"/>
+                    <path d="M115 60 Q150 45 185 60 Q185 75 150 80 Q115 75 115 60" fill="#e0e0e0"/>
+                    
+                    <!-- Тело -->
+                    <ellipse cx="150" cy="180" rx="50" ry="70" fill="#f0f0f0"/>
+                    
+                    <!-- Легкие (видимые через тело) -->
+                    <ellipse cx="135" cy="160" rx="15" ry="25" fill="#666666" opacity="0.7"/>
+                    <ellipse cx="165" cy="160" rx="15" ry="25" fill="#666666" opacity="0.7"/>
+                    
+                    <!-- Руки -->
+                    <ellipse cx="110" cy="170" rx="15" ry="40" fill="#f0f0f0" transform="rotate(-20 110 170)"/>
+                    <ellipse cx="190" cy="170" rx="15" ry="40" fill="#f0f0f0" transform="rotate(20 190 170)"/>
+                    
+                    <!-- Ноги (в позе на коленях) -->
+                    <ellipse cx="130" cy="280" rx="18" ry="50" fill="#f0f0f0" transform="rotate(-10 130 280)"/>
+                    <ellipse cx="170" cy="280" rx="18" ry="50" fill="#f0f0f0" transform="rotate(10 170 280)"/>
+                    
+                    <!-- Ступни -->
+                    <ellipse cx="120" cy="340" rx="25" ry="12" fill="#e0e0e0"/>
+                    <ellipse cx="180" cy="340" rx="25" ry="12" fill="#e0e0e0"/>
+                </g>
+                
+                <!-- Эффект кашля -->
+                <g opacity="0.6">
+                    <path d="M100 90 Q90 85 85 90 Q90 95 100 90" fill="#ffffff">
+                        <animateTransform attributeName="transform" type="translate" 
+                                        values="0,0; -10,-5; -20,-10" dur="2s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.8;0.4;0" dur="2s" repeatCount="indefinite"/>
+                    </path>
+                </g>
+            </svg>
+        </div>
+
+        <!-- Облака загрязнения -->
+        <svg class="pollution-cloud cloud-1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20,50 Q10,30 30,35 Q50,20 60,40 Q80,30 75,50 Q85,70 65,65 Q50,80 40,60 Q20,70 20,50 Z" fill="#ffffff"/>
+        </svg>
+
+        <svg class="pollution-cloud cloud-2" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M25,45 Q15,25 35,30 Q55,15 65,35 Q85,25 80,45 Q90,65 70,60 Q55,75 45,55 Q25,65 25,45 Z" fill="#ffffff"/>
+        </svg>
+
+        <svg class="pollution-cloud cloud-3" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M30,40 Q20,20 40,25 Q60,10 70,30 Q90,20 85,40 Q95,60 75,55 Q60,70 50,50 Q30,60 30,40 Z" fill="#ffffff"/>
+        </svg>
+
+        <svg class="pollution-cloud cloud-4" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15,55 Q5,35 25,40 Q45,25 55,45 Q75,35 70,55 Q80,75 60,70 Q45,85 35,65 Q15,75 15,55 Z" fill="#ffffff"/>
+        </svg>
+
+        <svg class="pollution-cloud cloud-5" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M25,50 Q15,30 35,35 Q55,20 65,40 Q85,30 80,50 Q90,70 70,65 Q55,80 45,60 Q25,70 25,50 Z" fill="#ffffff"/>
+        </svg>
+
+        <svg class="pollution-cloud cloud-6" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20,45 Q10,25 30,30 Q50,15 60,35 Q80,25 75,45 Q85,65 65,60 Q50,75 40,55 Q20,65 20,45 Z" fill="#ffffff"/>
+        </svg>
+    </div>
+
+    <script>
+        // Добавляем интерактивность при клике
+        document.addEventListener('click', function(e) {
+            // Создаем дополнительное облако в месте клика
+            const newCloud = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            newCloud.classList.add('pollution-cloud');
+            newCloud.style.position = 'absolute';
+            newCloud.style.left = (e.clientX - 25) + 'px';
+            newCloud.style.top = (e.clientY - 25) + 'px';
+            newCloud.style.width = '50px';
+            newCloud.style.height = '50px';
+            newCloud.setAttribute('viewBox', '0 0 100 100');
+            
+            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            path.setAttribute('d', 'M25,50 Q15,30 35,35 Q55,20 65,40 Q85,30 80,50 Q90,70 70,65 Q55,80 45,60 Q25,70 25,50 Z');
+            path.setAttribute('fill', '#ffffff');
+            
+            newCloud.appendChild(path);
+            document.body.appendChild(newCloud);
+            
+            // Анимация исчезновения
+            setTimeout(() => {
+                newCloud.style.opacity = '0';
+                newCloud.style.transform = 'scale(2)';
+                newCloud.style.transition = 'all 1s ease';
+                
+                setTimeout(() => {
+                    newCloud.remove();
+                }, 1000);
+            }, 100);
+        });
+
+        // Периодическое добавление новых облаков
+        setInterval(() => {
+            const clouds = document.querySelectorAll('.pollution-cloud');
+            const randomCloud = clouds[Math.floor(Math.random() * clouds.length)];
+            
+            randomCloud.style.transform += ' scale(1.1)';
+            randomCloud.style.opacity = '1';
+            
+            setTimeout(() => {
+                randomCloud.style.transform = randomCloud.style.transform.replace(' scale(1.1)', '');
+                randomCloud.style.opacity = '0.8';
+            }, 500);
+        }, 3000);
+    </script>
+</body>
+</html>
