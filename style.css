@@ -432,22 +432,23 @@ h1 {
 
 /* now its ur turn part */
  .container2 {
-            max-width: 64rem;
+            max-width: 50rem;
             margin: 0 auto;
             text-align: center;
             height: 900px;
+            margin-top: 150px;
         }
 
-        .main-heading {
+        .main-heading2 {
             color: #000000;
             font-size: 4rem;
             font-weight: 700;
             letter-spacing: -0.025em;
             line-height: 1.1;
-            margin-bottom: 3rem;
+            margin-bottom: 0rem;
         }
 
-        .illustration-container {
+        .illustration-container2 {
             display: flex;
             justify-content: center;
         }
@@ -455,7 +456,7 @@ h1 {
         .nature-illustration {
             max-width: 100%;
             height: auto;
-            width: 20rem;
+            width: 200px;
         }
 
         /* Responsive Design */
@@ -471,7 +472,7 @@ h1 {
         }
 
         @media (min-width: 1024px) {
-            .main-heading {
+            .main-heading2 {
                 font-size: 6rem;
             }
             
