@@ -1,157 +1,25 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Приветствие!</title>
-    <link href="hello.css" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            /* color: #333; */
-            overflow: hidden; /* Предотвращает появление полосы прокрутки во время анимации */
-            line-height: 1.6;
-        }
-
-        .container {
-            display: flex;
-            justify-content: space-between;
-            text-align: center;
-            padding: 40px;
-            max-width: 1440px;
-            /* background-color: #ffffff; */
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            animation: fadeInBackground 1s ease-out forwards;
-        }
-
-        .left-section, .right-section {
-            width: 30%;
-        }
-
-        @keyframes fadeInBackground {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            color: #000000;
-            font-weight: 700;
-        }
-
-        h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #ffffff;
-            font-weight: 700;
-        }
-
-        p {
-            font-size: 0.6em;
-            margin-bottom: 40px;
-            color: #000000;
-        }
-
-        /* button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 18px 35px;
-            font-size: 1.2em;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
-        }
-
-        button:hover {
-            background-color: #0056b3;
-            transform: translateY(-3px);
-        } */
-
-        /* Стили для анимации появления текста */
-        .fade-item {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.9s ease-out, transform 0.9s ease-out;
-        }
-
-        .fade-item.fade-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Медиа-запросы для адаптивности */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5em;
-            }
-            h2 {
-                font-size: 2em;
-            }
-            p {
-                font-size: 0.6em;
-            }
-            button {
-                padding: 15px 25px;
-                font-size: 1em;
-            }
-            .container {
-                flex-direction: column;
-                padding: 20px;
-            }
-            .left-section, .right-section {
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2em;
-            }
-            h2 {
-                font-size: 1.5em;
-            }
-            p {
-                font-size: 0.6em;
-            }
-        }
-    </style>
+    <title>Hello World</title>
+    <link rel="stylesheet" href="hello.css">
 </head>
 <body>
+    <button class="back-button">
+        <span class="back-arrow"></span>
+    </button>
     <div class="container">
         <div class="left-section">
-            <h1 class="fade-item hello-text">HELLO, HELLO!</h1>
+            <div class="hello-image"></div>
         </div>
         <div class="right-section">
-            <h2 class="fade-item about-heading">ABOUT:</h2>
-            <p class="fade-item about-paragraph">
-                Step into The Senses of Nature—a digital haven celebrating World Environment Day. Feel the planet's beauty through art, nature sounds, and stories that connect us to the wild.
-            </p>
-            <p class="fade-item about-paragraph">
-                Explore eco-tips, grassroots projects in Belarus and Lithuania, and join the movement to protect our shared Earth. This is more than a website—it's a call to feel, act, and preserve.
-            </p>
+            <h2 class="about-heading fade-item">ABOUT:</h2>
+            <p class="about-paragraph fade-item">Step into The Senses of Nature—a digital haven celebrating World Environment Day. Feel the planet's beauty through art, nature sounds, and stories that connect us to the wild.</p>
+            <p class="about-paragraph fade-item">Explore eco-tips, grassroots projects in Belarus and Lithuania, and join the movement to protect our shared Earth. This is more than a website—it's a call to feel, act, and preserve.</p>
         </div>
     </div>
-
     <script src="hello.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const fadeItems = document.querySelectorAll('.fade-item');
-            fadeItems.forEach((item, index) => {
-                // Задержка для каждого элемента, чтобы они появлялись по очереди
-                setTimeout(() => {
-                    item.classList.add('fade-in');
-                }, index * 250 + 500); // Начинаем анимацию через 0.5 секунды после загрузки
-            });
-        });
-    </script>
 </body>
 </html>

@@ -1,131 +1,174 @@
+@font-face {
+    font-family: 'Afacad';
+    src: url('afacad.woff') format('woff'); /* Replace with your font file path */
+}
+
 body {
-  margin: 0;
-  font-family: 'Afacad', 'Arial', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-image: url("img/hello/photo_2024-07-04_20-00-45.jpg"); /* Ваше фоновое изображение */
-  background-size: cover; /* Покрывает всю область */
-  background-position: center; /* Центрирует изображение */
-  background-repeat: no-repeat; /* Не повторяет изображение */
-  background-attachment: fixed; /* Фиксирует фон при прокрутке, важно для эффекта текста */
-  /* background-color: #f0f2f5; Запасной цвет фона */
-  overflow-x: hidden; /* Предотвращает горизонтальную полосу прокрутки */
+    margin: 0;
+    font-family: 'Afacad', 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("../img/hello/photo_2024-07-04_20-00-45.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
 }
 
 .container {
-  background-color: #A5C859; /* Светло-зеленый цвет из вашего примера */
-  border-radius: 20px; /* Закругленные углы */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Небольшая тень для объема */
-  width: 90%; /* Ширина контейнера */
-  max-width: 1440px; /* Максимальная ширина для больших экранов */
-  padding: 60px 80px; /* Отступы внутри контейнера */
-  display: grid;
-  grid-template-columns: 1fr 1.5fr; /* Соотношение ширины колонок */
-  gap: 100px; /* Отступ между колонками */
-  align-items: center; /* Выравнивание содержимого по центру по вертикали */
-  box-sizing: border-box; /* Включаем padding в ширину */
+    border-radius: 35px;
+    background-image: url(../img/hello/image_2025-07-04_20-37-55.png);
+    background-size: cover; /* Масштабирует изображение, чтобы полностью заполнить контейнер */
+    background-position: center; /* Центрирует изображение */
+    background-repeat: no-repeat; /* Убирает повторение изображения */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    width: 90%;
+    max-width: 1600px; /* Увеличенная ширина */
+    min-height: 500px; /* Увеличенная высота */
+    padding: 60px 80px;
+    padding: 60px 80px;
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    gap: 100px;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .left-section {
-  text-align: left;
+    text-align: center;
 }
 
 .right-section {
-  text-align: left;
+    text-align: left;
 }
 
-.hello-text {
-  font-size: 6em; /* Большой размер шрифта для "HELLO, HELLO!" */
-  font-weight: bold; /* Жирный шрифт */
-  margin: 0; /* Убираем стандартные отступы */
-  letter-spacing: -2px; /* Немного уменьшаем межбуквенный интервал */
-
-  /* Эффект "вырезанного" текста */
-  color: transparent;  /* Делаем текст прозрачным */
-  background-image: url("img/hello/photo_2024-07-04_20-00-45.jpg.png"); /* Используем фоновый узор для текста */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* Важно, чтобы фон текста совпадал с фоном body */
-  -webkit-background-clip: text; /* Обрезаем фон по форме текста для WebKit */
-  background-clip: text; /* Об��езаем фон по форме текста */
-  -webkit-text-fill-color: transparent; /* Убеждаемся, что текст прозрачен для WebKit */
+.hello-image {
+    background-image: url('path/to/your/image.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 200px; /* Настройте высоту по необходимости */
+    border-radius: 20px;
 }
 
 .about-heading {
-  font-size: 1.8em; /* Размер шрифта для "ABOUT:" */
-  color: #ffffff; /* Черный цвет текста */
-  margin-bottom: 15px;
-  font-weight: regular ;
+    font-size: 1.8em;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: normal;
 }
 
 .about-paragraph {
-  font-size: 0.8em; /* Размер шрифта для абзацев */
-  color: #000000; /* Черный цвет текста */
-  margin-bottom: 15px;
-  line-height: 1.6; /* Межстрочный интервал */
+    font-size: 0.8em;
+    color: #000000;
+    margin-bottom: 15px;
+    line-height: 1.6;
 }
 
-/* Стили для анимации появления текста */
 .fade-item {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1.2s ease-out, transform 1.2s ease-out; /* Увеличиваем время анимации */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
 }
 
 .fade-item.fade-in {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* Медиа-запросы для адаптивности */
 @media (max-width: 1024px) {
-  .container {
-    grid-template-columns: 1fr; /* На маленьких экранах - одна колонка */
-    padding: 40px 50px;
-    gap: 40px;
-  }
-  .hello-text {
-    font-size: 4.5em;
-    text-align: center; /* Центрируем текст в одной колонке */
-  }
-  .about-heading,
-  .about-paragraph {
-    text-align: center; /* Центрируем текст в одной колонке */
-  }
+    .container {
+        grid-template-columns: 1fr;
+        padding: 40px 50px;
+        gap: 40px;
+    }
+    .hello-image {
+        height: 150px;
+    }
+    .about-heading,
+    .about-paragraph {
+        text-align: center;
+    }
 }
 
 @media (max-width: 768px) {
-  .hello-text {
-    font-size: 3.5em;
-    letter-spacing: -1px;
-  }
-  .about-heading {
-    font-size: 1.5em;
-  }
-  .about-paragraph {
-    font-size: 1em;
-  }
-  .container {
-    padding: 30px 40px;
-    border-radius: 15px;
-  }
+    .hello-image {
+        height: 120px;
+    }
+    .about-heading {
+        font-size: 1.5em;
+    }
+    .about-paragraph {
+        font-size: 1em;
+    }
+    .container {
+        padding: 30px 40px;
+        border-radius: 15px;
+    }
 }
 
 @media (max-width: 480px) {
-  .hello-text {
-    font-size: 2.5em;
-    letter-spacing: 0px;
-  }
-  .about-heading {
-    font-size: 1.3em;
-  }
-  .about-paragraph {
-    font-size: 0.9em;
-  }
-  .container {
-    padding: 20px 25px;
-    border-radius: 10px;
-  }
+    .hello-image {
+        height: 100px;
+    }
+    .about-heading {
+        font-size: 1.3em;
+    }
+    .about-paragraph {
+        font-size: 0.9em;
+    }
+    .container {
+        padding: 20px 25px;
+        border-radius: 10px;
+    }
+}
+
+
+.back-button {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(-5px);
+}
+
+.back-arrow {
+    width: 20px;
+    height: 20px;
+    border-left: 3px solid white;
+    border-bottom: 3px solid white;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.back-button:hover .back-arrow {
+    transform: rotate(45deg) translateX(-2px);
+}
+
+@media (max-width: 768px) {
+    .back-button {
+        top: 20px;
+        left: 20px;
+        width: 40px;
+        height: 40px;
+    }
 }
