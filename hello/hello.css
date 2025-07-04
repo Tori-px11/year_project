@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  font-family: 'Afacad', 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("img/hello/photo_2024-07-04_20-00-45.jpg"); /* Ваше фоновое изображение */
+  background-size: cover; /* Покрывает всю область */
+  background-position: center; /* Центрирует изображение */
+  background-repeat: no-repeat; /* Не повторяет изображение */
+  background-attachment: fixed; /* Фиксирует фон при прокрутке, важно для эффекта текста */
+  /* background-color: #f0f2f5; Запасной цвет фона */
+  overflow-x: hidden; /* Предотвращает горизонтальную полосу прокрутки */
+}
+
+.container {
+  background-color: #A5C859; /* Светло-зеленый цвет из вашего примера */
+  border-radius: 20px; /* Закругленные углы */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Небольшая тень для объема */
+  width: 90%; /* Ширина контейнера */
+  max-width: 1440px; /* Максимальная ширина для больших экранов */
+  padding: 60px 80px; /* Отступы внутри контейнера */
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; /* Соотношение ширины колонок */
+  gap: 100px; /* Отступ между колонками */
+  align-items: center; /* Выравнивание содержимого по центру по вертикали */
+  box-sizing: border-box; /* Включаем padding в ширину */
+}
+
+.left-section {
+  text-align: left;
+}
+
+.right-section {
+  text-align: left;
+}
+
+.hello-text {
+  font-size: 6em; /* Большой размер шрифта для "HELLO, HELLO!" */
+  font-weight: bold; /* Жирный шрифт */
+  margin: 0; /* Убираем стандартные отступы */
+  letter-spacing: -2px; /* Немного уменьшаем межбуквенный интервал */
+
+  /* Эффект "вырезанного" текста */
+  color: transparent;  /* Делаем текст прозрачным */
+  background-image: url("img/hello/photo_2024-07-04_20-00-45.jpg.png"); /* Используем фоновый узор для текста */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Важно, чтобы фон текста совпадал с фоном body */
+  -webkit-background-clip: text; /* Обрезаем фон по форме текста для WebKit */
+  background-clip: text; /* Об��езаем фон по форме текста */
+  -webkit-text-fill-color: transparent; /* Убеждаемся, что текст прозрачен для WebKit */
+}
+
+.about-heading {
+  font-size: 1.8em; /* Размер шрифта для "ABOUT:" */
+  color: #ffffff; /* Черный цвет текста */
+  margin-bottom: 15px;
+  font-weight: regular ;
+}
+
+.about-paragraph {
+  font-size: 0.8em; /* Размер шрифта для абзацев */
+  color: #000000; /* Черный цвет текста */
+  margin-bottom: 15px;
+  line-height: 1.6; /* Межстрочный интервал */
+}
+
+/* Стили для анимации появления текста */
+.fade-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out; /* Увеличиваем время анимации */
+}
+
+.fade-item.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr; /* На маленьких экранах - одна колонка */
+    padding: 40px 50px;
+    gap: 40px;
+  }
+  .hello-text {
+    font-size: 4.5em;
+    text-align: center; /* Центрируем текст в одной колонке */
+  }
+  .about-heading,
+  .about-paragraph {
+    text-align: center; /* Центрируем текст в одной колонке */
+  }
+}
+
+@media (max-width: 768px) {
+  .hello-text {
+    font-size: 3.5em;
+    letter-spacing: -1px;
+  }
+  .about-heading {
+    font-size: 1.5em;
+  }
+  .about-paragraph {
+    font-size: 1em;
+  }
+  .container {
+    padding: 30px 40px;
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hello-text {
+    font-size: 2.5em;
+    letter-spacing: 0px;
+  }
+  .about-heading {
+    font-size: 1.3em;
+  }
+  .about-paragraph {
+    font-size: 0.9em;
+  }
+  .container {
+    padding: 20px 25px;
+    border-radius: 10px;
+  }
+}

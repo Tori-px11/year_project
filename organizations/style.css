@@ -1,0 +1,155 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Afacad', 'Arial', sans-serif;
+            background: linear-gradient(180deg, #A4C639 0%, #B8C89A 100%);
+            min-height: 100vh;
+            padding: 40px 60px;
+            color: #2D2D2D;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(-5px);
+        }
+
+        .back-arrow {
+            width: 20px;
+            height: 20px;
+            border-left: 3px solid white;
+            border-bottom: 3px solid white;
+            transform: rotate(45deg);
+            transition: transform 0.3s ease;
+        }
+
+        .back-button:hover .back-arrow {
+            transform: rotate(45deg) translateX(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .title {
+            font-size: 4.5rem;
+            font-weight: bold;
+            color: white;
+            text-align: left;
+            margin-bottom: 120px;
+            letter-spacing: 0.05em;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .organizations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 80px 60px;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .org-item {
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .org-item:nth-child(even) {
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .org-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2D2D2D;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .org-contact {
+            font-size: 1.1rem;
+            color: #2D2D2D;
+            line-height: 1.4;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 30px;
+            }
+
+            .back-button {
+                top: 20px;
+                left: 20px;
+                width: 40px;
+                height: 40px;
+            }
+
+            .title {
+                font-size: 2.5rem;
+                margin-bottom: 60px;
+            }
+
+            .organizations-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .org-name, .org-contact {
+                font-size: 1rem;
+            }
+        }

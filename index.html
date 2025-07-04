@@ -8,6 +8,12 @@
   <script src="script.js" defer></script>
 </head>
 <body>
+ <button id="scrollTopBtn">
+    <svg width="22" height="11" viewBox="0 0 22 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1.89453 9.8335L11.3619 1.91415L20.5117 9.8335" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
   <!-- Hero Section from index.html -->
   <div class="container">
     <div class="hero-card">
@@ -20,27 +26,104 @@
     <div class="buttons-container">
       <a href="#problems" class="button">problems</a>
       <a href="#how-to-help" class="button">how to help</a>
-      <a href="#share" class="button">share</a>
+      <a href="organizations/index.html" class="button">share</a>
       <a href="#about" class="button">about</a>
     </div>
   </div>
-
   <!-- Problems Strip from index.html -->
   <div class="problems-strip" id="problems">
     <h2>PROBLEMS</h2>
   </div>
 
   <!-- Fade Sections from index.html -->
-  <div class="black-background">
-    <div class="fade-section">
-      <p class="fade-text">Imagine a world where the air stings your lungs,</p>
+<div class="black-background">
+  <div class="fade-section">
+    <div class="image-grid">
+      <!-- Section 1: Full 8x8 grid behind text -->
+      <img src="img/1_air/вв4.png" class="img-1" style="grid-column: 2; grid-row: 2;" loading="lazy">
+      <img src="img/1_air/вв1.png" class="img-2" style="grid-column: 11; grid-row: 1;" loading="lazy">
+      <img src="img/1_air/вв2.png" class="img-3" style="grid-column: 3; grid-row: 2;" loading="lazy">
+      <img src="img/1_air/вв3.png" class="img-4" style="grid-column: 4; grid-row: 5;" loading="lazy">
+      <img src="img/1_air/вв.png"  class="img-5" style="grid-column: 2; grid-row: 5;" loading="lazy">
+      <img src="img/1_air/вв5.png" class="img-6" style="grid-column: 7; grid-row: 2;" loading="lazy">
     </div>
-    <div class="fade-section">
-      <p class="fade-text">the oceans are a graveyard of plastic,</p>
+    <p class="fade-text">Imagine a world where the air stings your lungs,</p>
+  </div>
+
+  <div class="fade-section">
+    <div class="image-grid2">
+      <img src="img/3_fish/fish1.png" class="img-7" style="grid-column: 1; grid-row: 1;" loading="lazy">
+      <img src="img/3_fish/fish2.png" class="img-8" style="grid-column: 2; grid-row: 1;" loading="lazy">
+      <img src="img/3_fish/fish3.png" class="img-9" style="grid-column: 3; grid-row: 1;" loading="lazy">
+      <img src="img/3_fish/fish4.png" class="img-10" style="grid-column: 4; grid-row: 1;" loading="lazy">
+      <img src="img/3_fish/fish5.png" class="img-11" style="grid-column: 5; grid-row: 1;" loading="lazy">
+      <img src="img/3_fish/fish6.png" class="img-12" style="grid-column: 6; grid-row: 1;" loading="lazy">
+      
+
+      <!-- row 2 -->
+      <img src="img/3_fish/fish6-1.png" class="img-15" style="grid-column: 1; grid-row: 2;" loading="lazy">
+      <img src="img/3_fish/fish7-1.png" class="img-16" style="grid-column: 2; grid-row: 2;" loading="lazy">
+      <img src="img/3_fish/fish1-1.png" class="img-17" style="grid-column: 3; grid-row: 2;" loading="lazy">
+      <img src="img/3_fish/fish8-1.png" class="img-18" style="grid-column: 4; grid-row: 2;" loading="lazy">
+      <img src="img/3_fish/fish2-1.png" class="img-19" style="grid-column: 5; grid-row: 2;" loading="lazy">
+      <img src="img/3_fish/fish3-1.png" class="img-20" style="grid-column: 6; grid-row: 2;" loading="lazy">
+      
+      <!-- row 3 -->
+      <img src="img/3_fish/fish2.png" class="img-23" style="grid-column: 1; grid-row: 3;" loading="lazy">
+      <img src="img/3_fish/fish4.png" class="img-24" style="grid-column: 2; grid-row: 3;" loading="lazy">
+      <img src="img/3_fish/fish6.png" class="img-25" style="grid-column: 3; grid-row: 3;" loading="lazy">
+      <img src="img/3_fish/fish8.png" class="img-26" style="grid-column: 4; grid-row: 3;" loading="lazy">
+      <img src="img/3_fish/fish1.png" class="img-27" style="grid-column: 5; grid-row: 3;" loading="lazy">
+      <img src="img/3_fish/fish3.png" class="img-28" style="grid-column: 6; grid-row: 3;" loading="lazy">
+      
+
+      <!-- row 5 -->
+      <img src="img/3_fish/pl1.png" class="img-31" style="grid-column: 1; grid-row: 5;" loading="lazy">
+      <img src="img/3_fish/pl3.png" class="img-32" style="grid-column: 2; grid-row: 5;" loading="lazy">
+      <img src="img/3_fish/pl5.png" class="img-34" style="grid-column: 4; grid-row: 5;" loading="lazy">
+      <img src="img/3_fish/pl2.png" class="img-36" style="grid-column: 6; grid-row: 5;" loading="lazy">
+
+      <!-- row 6 -->
+      <img src="img/3_fish/pl4-1.png" class="img-40" style="grid-column: 2; grid-row: 6;" loading="lazy">
+      <img src="img/3_fish/pl2-1.png" class="img-41" style="grid-column: 3; grid-row: 6;" loading="lazy">
+      <img src="img/3_fish/pl1-1.png" class="img-42" style="grid-column: 4; grid-row: 6;" loading="lazy">
+      <img src="img/3_fish/pl3-1.png" class="img-43" style="grid-column: 5; grid-row: 6;" loading="lazy">
+
+      <!-- row 7 -->
+      <img src="img/3_fish/pl3.png" class="img-47" style="grid-column: 1; grid-row: 7;" loading="lazy">
+      <img src="img/3_fish/pl5.png" class="img-48" style="grid-column: 2; grid-row: 7;" loading="lazy">
+      <img src="img/3_fish/pl1.png" class="img-49" style="grid-column: 3; grid-row: 7;" loading="lazy">
+      <img src="img/3_fish/pl3.png" class="img-51" style="grid-column: 5; grid-row: 7;" loading="lazy">
+      <img src="img/3_fish/pl4.png" class="img-52" style="grid-column: 6; grid-row: 7;" loading="lazy">
     </div>
+    <p class="fade-text">the oceans are a graveyard of plastic,</p>
+  </div>
+
+
+
     <div class="fade-section">
+      <div class="image-grid3">
+        <!-- Section 3: Images in rows 1-3 and 6-8 -->
+        <img src="img/4_forest/бб2.png" class="img-56" style="grid-column: 2; grid-row: 1;" loading="lazy">
+        <img src="img/4_forest/бб3.png" class="img-58" style="grid-column: 4; grid-row: 1;" loading="lazy">
+
+        <img src="img/4_forest/бб.png" class="img-63" style="grid-column: 3; grid-row: 2;" loading="lazy">
+        <img src="img/4_forest/бб2-1.png" class="img-66" style="grid-column: 6; grid-row: 2;" loading="lazy">
+
+        <img src="img/4_forest/бб4.png" class="img-67" style="grid-column: 1; grid-row: 3;" loading="lazy">
+        <img src="img/4_forest/бб4-1.png" class="img-70" style="grid-column: 5; grid-row: 3;" loading="lazy">
+
+        <img src="img/4_forest/пп5.png" class="img-73" style="grid-column: 1; grid-row: 5;" loading="lazy">
+        <img src="img/4_forest/пп2.png" class="img-75" style="grid-column: 3; grid-row: 5;" loading="lazy">
+        <img src="img/4_forest/пп4.png" class="img-77" style="grid-column: 6; grid-row: 5;" loading="lazy">
+
+        <img src="img/4_forest/пп3.png" class="img-80" style="grid-column: 2; grid-row: 6;" loading="lazy">
+        <img src="img/4_forest/пп.png" class="img-82" style="grid-column: 4; grid-row: 6;" loading="lazy">
+      </div>
+
       <p class="fade-text">and the forests—once alive with birdsong—are silent.</p>
     </div>
+
     <section class="fade-section">
       <div class="fade-text">
         But this world is not yet real.<br>Not entirely.<br><br>
@@ -48,7 +131,9 @@
         If we ignore the signs, this future may <br> become our present.<br>
         But if we choose wisely, nature will keep <br> breathing with us.
       </div>
+    </section>
   </div>
+  
 
   <!-- How to Help Section from index2.html -->
   <div class="container grid-container" id="how-to-help">
@@ -76,6 +161,7 @@
       <div class="grid-item item-5">
         <img src="img/5_how_to_help/55.png" class="animated-image" alt="Getting involved">
         <p class="animated-text">Get involved: donate or volunteer with environmental groups.</p>
+        <button class="get-involved-btn">+</button>
       </div>
   </div>
   
