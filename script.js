@@ -88,3 +88,20 @@ document.addEventListener("DOMContentLoaded", () => {
 document.querySelector('.get-involved-btn').addEventListener('click', () => {
   window.location.href = 'organizations/index.html';
 });
+const audio = document.getElementById('backgroundAudio');
+const audioToggleBtn = document.getElementById('audioToggleBtn');
+
+// Устанавливаем зацикливание аудио
+audio.loop = true;
+
+// Обработчик клика по кнопке
+audioToggleBtn.addEventListener('click', () => {
+    if (audio.paused) {
+        audio.muted = false; // Включаем звук
+        audio.play();
+        audioToggleBtn.classList.add('playing'); // Иконка становится белой
+    } else {
+        audio.pause();
+        audioToggleBtn.classList.remove('playing'); // Иконка становится черной
+    }
+});

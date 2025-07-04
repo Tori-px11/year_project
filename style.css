@@ -1020,3 +1020,41 @@ h1 {
   opacity: 1;
 }
 
+/* sound */
+
+#audioToggleBtn {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
+    backdrop-filter: blur(10px); /* Эффект матового стекла */
+    -webkit-backdrop-filter: blur(10px); /* Совместимость с Safari */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+#audioToggleBtn svg {
+    width: 24px;
+    height: 24px;
+}
+
+#audioToggleBtn.playing svg {
+    fill: rgb(155, 155, 155); /* Белая нота при воспроизведении */
+}
+
+#audioToggleBtn:not(.playing) svg {
+    fill: black; /* Черная нота при паузе */
+}
+
+#audioToggleBtn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
