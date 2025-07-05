@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Back button navigation
   document.querySelector('.back-button').addEventListener('click', () => {
-    window.location.href = '../index.html';
-  });
+        window.location.href = '../index.html';
+    });
 });
+
